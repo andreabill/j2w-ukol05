@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrace na letní dětský tábor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+TODO
+<div class="container">
+    <form>
+        <h1>Registrace na letní dětský tábor</h1>
+        <div>
+            <label for="jmeno">Jméno:</label>
+            <span id="jmeno" type="text" th:field="${polozka.jmeno}"/>
+        </div>
+
+        <div>
+            <label for="prijmeni">Přijmení:</label>
+            <span id="prijmeni" type="text" th:field="${polozka.prijmeni}"/>
+        </div>
+
+        <div>
+            <label for="narozeni">Datum narození:</label>
+            <span id="narozeni" type="date" th:field="${polozka.datumNarozeni}"/>
+        </div>
+
+        <div>Pohlaví:</div>
+        <div>
+            <span id="pohlavi1" type="radio" value="ZENA" th:field="${polozka.pohlavi}"/>
+            <label for="pohlavi1">dívka</label>
+        </div>
+
+        <div>
+            <span id="pohlaví2" type="radio" value="MUZ" th:field="${polozka.pohlavi}"/>
+            <label for="pohlaví2">chlapec</label>
+        </div>
+
+        <div>
+            <div>Sporty:</div>
+            <div>
+                <span id="sport1" type="radio" value="PLAVANI"/>
+                <label for="sport1">plavání</label>
+            </div>
+            <div>
+                <span id="sport2" type="radio" value="BEH"/>
+                <label for="sport2">běh</label>
+            </div>
+            <div>
+                <span id="sport3" type="radio" value="CYKLISTIKA"/>
+                <label for="sport3">cyklistika</label>
+            </div>
+            <div>
+                <span id="sport4" type="radio" value="FOTBAL"/>
+                <label for="sport4">fotbal</label>
+            </div>
+            <div>
+                <span id="sport5" type="radio" value="BASKETBAL"/>
+                <label for="sport5">basketbal</label>
+            </div>
+            <div>
+                <span id="sport6" type="radio" value="ŠERM"/>
+                <label for="sport6">šerm</label>
+            </div>
+        </div>
+
+        <div>
+            <label for="turnus">Zvolený turnus:</label>
+            <select id="turnus" th:field="${polozka.turnus}"/>
+            <option value=""></option>
+            <option value="1">5. až 11. července</option>
+            <option value="2">12. až 18. července</option>
+            <option value="3">19. až 25. července</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="email">Email na rodiče:</label>
+            <span id="email" type="email" th:field="${polozka.email}"/>
+        </div>
+
+        <div>
+            <label for="telefon">Telefon na rodiče:</label>
+            <span id="telefon" type="text" th:field="${polozka.telefon}"/>
+        </div>
+
+        <div>
+            <button type="submit">Odeslat</button>
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>

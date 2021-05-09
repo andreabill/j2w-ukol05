@@ -7,6 +7,157 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-    TODO
+
+<div class="container">
+    <form>
+        <h1>Registrace na letní dětský tábor</h1>
+        <div>
+            <label for="jmeno">Jméno:</label>
+            <input id="jmeno" type="text" th:field="${polozka.jmeno}"/>
+            <div class="error" th:if="${#fields.hasErrors('polozka.jmeno')}" th:errors="${polozka.jmeno}"}></div>
+        </div>
+
+        <div>
+            <label for="prijmeni">Přijmení:</label>
+            <input id="prijmeni" type="text" th:field="${polozka.prijmeni}"/>
+            <div class="error" th:if="${#fields.hasErrors('polozka.prijmeni')}" th:errors="${polozka.prijmeni}"}></div>
+        </div>
+
+        <div>
+            <label for="narozeni">Datum narození:</label>
+            <input id="narozeni" type="date" th:field="${polozka.datumNarozeni}"/>
+            <div class="error" th:if="${#fields.hasErrors('polozka.datumNarozeni')}" th:errors="${polozka.datumNarozeni}"}></div>
+        </div>
+
+        <div>Pohlaví:</div>
+        <div>
+            <input id="pohlavi1" type="radio" value="ZENA" th:field="${polozka.pohlavi}"/>
+            <label for="pohlavi1">dívka</label>
+        </div>
+
+        <div>
+            <input id="pohlaví2" type="radio" value="MUZ" th:field="${polozka.pohlavi}"/>
+            <label for="pohlaví2">chlapec</label>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('polozka.pohlavi')}" th:errors="${polozka.pohlavi}"}></div>
+
+        <div>
+            <div>Sporty:</div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="PLAVANI"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">plavání</label>
+            </div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="BEH"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">běh</label>
+            </div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="CYKLISTIKA"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">cyklistika</label>
+            </div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="FOTBAL"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">fotbal</label>
+            </div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="BASKETBAL"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">basketbal</label>
+            </div>
+            <div>
+                <input type="checkbox" th:field="${polozka.zvoleneSporty}" value="ŠERM"/>
+                <label th:for="${#ids.prev('zvoleneSporty')}">šerm</label>
+            </div>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('polozka.zvoleneSporty')}" th:errors="${polozka.zvoleneSporty}"}></div>
+
+        <div>
+            <label for="turnus">Zvolený turnus:</label>
+            <select id="turnus" th:field="${polozka.turnus}"/>
+            <option value=""></option>
+            <option value="1">5. až 11. července</option>
+            <option value="2">12. až 18. července</option>
+            <option value="3">19. až 25. července</option>
+            </select>
+            <div class="error" th:if="${#fields.hasErrors('polozka.turnus')}" th:errors="${polozka.turnus}"}></div>
+        </div>
+
+        <div>
+            <label for="email">Email na rodiče:</label>
+            <input id="email" type="email" th:field="${polozka.email}"/>
+            <div class="error" th:if="${#fields.hasErrors('polozka.email')}" th:errors="${polozka.email}"}></div>
+        </div>
+
+        <div>
+            <label for="telefon">Telefon na rodiče:</label>
+            <input id="telefon" type="text" th:field="${polozka.telefon}"/>
+            <div class="error" th:if="${#fields.hasErrors('polozka.telefon')}" th:errors="${polozka.telefon}"}></div>
+        </div>
+
+        <div>
+            <button type="submit">Odeslat</button>
+        </div>
+
+        <!--
+        <label for="zbozi" class="radek">Zboží:</label>
+        <select id="zbozi" name="zbozi" th:field="${form.zbozi}">
+            <option value=""></option>
+            <option value="1">Veltlín – Sauvignon kabinet</option>
+            <option value="2">Rulanské šedé suché</option>
+            <option value="3">Modrý Portugal</option>
+            <option value="4">Frisco Mojito</option>
+            <option value="5">Žufánek Višňovka</option>
+            <option value="6">Jägermeister</option>
+        </select>
+        <div class="error" th:if="${#fields.hasErrors('form.zbozi')}" th:errors="${form.zbozi}"></div>
+
+        <div class="radek">Objem:</div>
+        <div class="skupina">
+            <div>
+                <input id="objem1" type="radio" th:field="${form.objem}" value="OBJEM_250ML"/>
+                <label for="objem1">250 ml</label>
+            </div>
+            <div>
+                <input id="objem2" type="radio" th:field="${form.objem}" value="OBJEM_750ML"/>
+                <label for="objem2">750 ml</label>
+            </div>
+            <div>
+                <input id="objem3" type="radio" th:field="${form.objem}" value="OBJEM_5L"/>
+                <label for="objem3">5 litrů</label>
+            </div>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('form.objem')}" th:errors="${form.objem}"></div>
+
+        <label for="jmeno" class="radek">Jméno a příjmení:</label>
+        <input id="jmeno" type="text" th:field="${form.jmeno}"/>
+        <div class="error" th:if="${#fields.hasErrors('form.jmeno')}" th:errors="${form.jmeno}"></div>
+
+        <label for="vek" class="radek">Věk:</label>
+        <input id="vek" type="number" th:field="${form.vek}"/>
+        <div class="error" th:if="${#fields.hasErrors('form.vek')}" th:errors="${form.vek}"></div>
+
+        <label for="email" class="radek">E-mail:</label>
+        <input id="email" type="email" th:field="${form.email}"/>
+        <div class="error" th:if="${#fields.hasErrors('form.email')}" th:errors="${form.email}"></div>
+
+        <div class="radek">
+            <input id="obchodni-podminky" type="checkbox" name="obchodniPodminky"
+                   th:checked="${form.obchodniPodminky}"/>
+            <label for="obchodni-podminky">Souhlasím s obchodními podmínkami</label>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('form.obchodniPodminky')}"
+             th:errors="${form.obchodniPodminky}"></div>
+
+        <div class="radek">
+            <input id="newsletter" type="checkbox" name="newsletter" th:checked="${form.newsletter}"/>
+            <label for="newsletter">Souhlasím se zasíláním newsletterů</label>
+        </div>
+        <div class="error" th:if="${#fields.hasErrors('form.newsletter')}" th:errors="${form.newsletter}"></div>
+
+        <div class="radek controls">
+            <button type="submit">Objednat</button>
+        </div>
+        -->
+    </form>
+</div>
 </body>
 </html>
