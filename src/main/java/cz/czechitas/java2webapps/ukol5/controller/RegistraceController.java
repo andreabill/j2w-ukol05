@@ -30,7 +30,7 @@ public class RegistraceController {
             return "formular";
         }
 
-        if (form.getDatumNarozeni() < 15 && form.getDatumNarozeni() > 7) {
+        if (form.getVek() < 15 && form.getVek() > 7) {
             return "formular";
         }
 
@@ -38,7 +38,8 @@ public class RegistraceController {
             return "formular";
         }
 
-        return new ModelAndView ("formular_objednano");
+        return new ModelAndView ("formular_objednano")
+            .addObject("formular", form);
 
     }
 }

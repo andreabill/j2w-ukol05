@@ -5,7 +5,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.EnumSet;
+import java.util.Objects;
 
 public class RegistraceForm {
     @NotBlank
@@ -105,4 +107,10 @@ public class RegistraceForm {
     }
 
     private String telefon;
+
+    public int getVek() {
+        Period period = datumNarozeni.until(LocalDate.now());
+        int vek = period.getYears();
+        return vek;
+    }
 }
