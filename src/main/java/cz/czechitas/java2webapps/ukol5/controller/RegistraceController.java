@@ -31,15 +31,25 @@ public class RegistraceController {
         }
 
         if (form.getVek() < 15 && form.getVek() > 7) {
+            bindingResult.rejectValue("datumNarozeni", "", "Mohou se zúčastnit jen děti od 9 do 15 let.");
             return "formular";
         }
 
         if (form.getZvoleneSporty().size() < 2) {
+            bindingResult.rejectValue("zvoleneSporty", "", "Vyberte alespoň 2 sporty.");
             return "formular";
         }
 
-        return new ModelAndView ("formular_objednano")
-            .addObject("formular", form);
+        return new ModelAndView("formular_objednano")
+                //.addObject("formular", form);
+                .addObject("jmeno", form.getJmeno())
+                .addObject("prijmeni", form.getPrijmeni())
+                .addObject("datumNarozeni", form.getDatumNarozeni())
+                .addObject("pohlavi", form.getPohlavi())
+                .addObject("zvoleneSporty", form.getZvoleneSporty())
+                .addObject("turnus", form.getTurnus())
+                .addObject("email", form.getEmail())
+                .addObject("telefon", form.getTelefon());
 
     }
 }
