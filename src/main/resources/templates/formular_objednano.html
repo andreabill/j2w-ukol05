@@ -17,22 +17,23 @@
 
         <div>
             <div>Jméno účastníka:</div>
-            <span>th:field="${jmeno}"</span>
+            <span th:text="${formular.jmeno}"></span>
             <div>Přijmení účastníka:</div>
-            <span>th:field="${prijmeni}"</span>
+            <span th:text="${formular.prijmeni}"></span>
             <div>Datum narození účastníka:</div>
-            <span>th:field="${datumNarozeni}"</span>
+            <span th:text="${formular.datumNarozeni}"></span>
             <div>Pohlaví účastníka:</div>
-            <span>th:field="${pohlavi}"</span>
+            <span th:text="${formular.pohlavi}"></span>
             <div>Vybrané sporty:</div>
-            <span>th:field="${zvoleneSporty}"</span>
+            <span th:text="${formular.zvoleneSporty}"></span>
             <div>Účastníkem zvolený turnus:</div>
-            <span>th:field="${turnus}"</span>
-            <div>Email na rodiče účaastníka:</div>
-            <span>th:field="${email}"</span>
+            <div>varianta: </div><span th:text="${formular.turnus}"></span>
+            <div>Email na rodiče účastníka:</div>
+            <span th:text="${formular.email}"></span>
             <div>Telefon na rodiče účastníka:</div>
-            <span>th:field="${telefon}"</span>
+            <span th:text="${formular.telefon}"></span>
         </div>
+
 
 
         <!--

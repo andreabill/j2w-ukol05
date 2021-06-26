@@ -30,7 +30,7 @@ public class RegistraceController {
             return "formular";
         }
 
-        if (form.getVek() < 15 && form.getVek() > 7) {
+        if (form.getVek() > 15 && form.getVek() < 9) {
             bindingResult.rejectValue("datumNarozeni", "", "Mohou se zúčastnit jen děti od 9 do 15 let.");
             return "formular";
         }
@@ -41,15 +41,15 @@ public class RegistraceController {
         }
 
         return new ModelAndView("formular_objednano")
-                //.addObject("formular", form);
-                .addObject("jmeno", form.getJmeno())
-                .addObject("prijmeni", form.getPrijmeni())
-                .addObject("datumNarozeni", form.getDatumNarozeni())
-                .addObject("pohlavi", form.getPohlavi())
-                .addObject("zvoleneSporty", form.getZvoleneSporty())
-                .addObject("turnus", form.getTurnus())
-                .addObject("email", form.getEmail())
-                .addObject("telefon", form.getTelefon());
+                .addObject("formular", form);
+                //.addObject("jmeno", form.getJmeno())
+                //.addObject("prijmeni", form.getPrijmeni())
+                //.addObject("datumNarozeni", form.getDatumNarozeni())
+                //.addObject("pohlavi", form.getPohlavi())
+                //.addObject("zvoleneSporty", form.getZvoleneSporty())
+                //.addObject("turnus", form.getTurnus())
+                //.addObject("email", form.getEmail())
+                //.addObject("telefon", form.getTelefon());
 
     }
 }

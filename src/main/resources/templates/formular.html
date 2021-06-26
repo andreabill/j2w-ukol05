@@ -72,11 +72,11 @@
 
         <div>
             <label for="turnus">Zvolený turnus:</label>
-            <select id="turnus" th:field="${polozka.turnus}"/>
+            <select id="turnus" th:field="${polozka.turnus}">
             <option value=""></option>
-            <option value="1">5. až 11. července</option>
-            <option value="2">12. až 18. července</option>
-            <option value="3">19. až 25. července</option>
+            <option value="1">5. až 11. července (varianta 1)</option>
+            <option value="2">12. až 18. července (varianta 2)</option>
+            <option value="3">19. až 25. července (varianta 3)</option>
             </select>
             <div class="error" th:if="${#fields.hasErrors('polozka.turnus')}" th:errors="${polozka.turnus}"}></div>
         </div>
