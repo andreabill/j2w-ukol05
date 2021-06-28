@@ -30,7 +30,7 @@ public class RegistraceController {
             return "formular";
         }
 
-        if (form.getVek() > 15 && form.getVek() < 9) {
+        if (form.getVek() > 15 || form.getVek() < 9) {
             bindingResult.rejectValue("datumNarozeni", "", "Mohou se zúčastnit jen děti od 9 do 15 let.");
             return "formular";
         }
